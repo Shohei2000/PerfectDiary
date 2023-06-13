@@ -1,0 +1,273 @@
+.title {
+	text-decoration: none; /* 下線を無効化 */
+	color: black;
+}
+
+.header_a {
+	text-decoration: none;
+	color: black;
+}
+
+p {
+	padding: 10px;
+	margin: 0;
+}
+
+h2 {
+	text-align: center;
+	margin: 0;
+	position: relative;
+	padding: 0.5rem 2rem;
+	letter-spacing: 0.2em;
+	display: flex;
+    align-items: center;
+    place-content: center;
+}
+
+h2:before {
+	position: absolute;
+	top: -7px;
+	left: -7px;
+	width: 100%;
+	height: 100%;
+	content: '';
+}
+
+.h3_login {
+	color: darkred;
+	border-radius: 100vh;
+	margin: 0;
+	padding: 0 0 1.5rem 0;
+}
+
+h3 {
+	padding: 1rem 3rem;
+	color: darkred;
+	border-radius: 100vh;
+	margin: 0.5rem;
+	padding: 0;
+}
+
+.btn {
+	height: 53px;
+	padding-top: 1px;
+}
+
+.btn a {
+	width: 180px;
+	padding: 15px;
+	color: #ffffff;
+	font-size: 15px;
+	line-height: 120%;
+	text-align: center;
+	text-decoration: none;
+	background: #1B73BA;
+	display: block;
+	position: relative;
+	-webkit-border-radius: 12px;
+	-moz-border-radius: 12px;
+	border-radius: 12px;
+	-webkit-box-shadow: 4px 4px 0px 0px rgba(0, 0, 0, 0.2);
+	-moz-box-shadow: 4px 4px 0px 0px rgba(0, 0, 0, 0.2);
+	box-shadow: 4px 4px 0px 0px rgba(0, 0, 0, 0.2);
+	-webkit-transition: 0.3s ease-out;
+	-moz-transition: 0.3s ease-out;
+	-o-transition: 0.3s ease-out;
+	transition: 0.3s ease-out;
+}
+
+.btn a:hover {
+	margin: 4px 0 0 4px;
+	-webkit-box-shadow: 0 0 0px 0px rgba(0, 0, 0, 0.2);
+	-moz-box-shadow: 0 0 0px 0px rgba(0, 0, 0, 0.2);
+	box-shadow: 0 0 0px 0px rgba(0, 0, 0, 0.2);
+}
+
+.table_main {
+	margin: 0 auto;
+	text-align: center;
+
+}
+
+.table_sub {
+	margin: 0 auto;
+}
+
+.table_row4{
+	height: 4vh;
+}
+
+html {
+	height: 100%;
+	display: flex;
+	align-items: center;
+	background: aliceblue;
+}
+
+body {
+	width: 60%;
+	min-height: 80%;
+	margin: 0 auto;
+	padding: 1rem 0;
+	background: lavenderblush;
+	border: outset antiquewhite 7px;
+	display: grid;
+	align-content: center;
+	font-family: STKaiti;
+}
+
+.username {
+	margin: 0 1rem;
+}
+
+.usertd {
+	display: flex;
+	align-items: center;
+	border: solid darksalmon;
+}
+
+/* ボタン用CSS(汎用ボタン) */
+.btn05 {
+	width: 15vw;
+	/*線の基点とするためrelativeを指定*/
+	position: relative;
+	/*ボタンの形状*/
+	display: inline-block;
+	color: #333;
+	padding: 10px 20px;
+	background: white;
+	text-decoration: none;
+	outline: none;
+	/*アニメーションの指定*/
+	transition: all .3s;
+	transition-delay: .7s; /*0.7秒遅れてアニメーション*/
+}
+
+/*hoverした際の、ボタンの背景とテキスト色の変更*/
+.btn05:hover {
+	background: #333;
+	color: #fff;
+}
+
+/*線の設定*/
+.btn05 span {
+	display: block;
+}
+
+/*横線の設定*/
+.btn05::before, .btn05::after {
+	content: "";
+	/*絶対配置で線の位置を決める*/
+	position: absolute;
+	/*線の形状*/
+	width: 0;
+	height: 1px;
+	background: #333;
+	/*アニメーションの指定*/
+	transition: all 0.2s linear;
+}
+
+/*縦線の設定*/
+.btn05 span::before, .btn05 span::after {
+	content: "";
+	/*絶対配置で線の位置を決める*/
+	position: absolute;
+	/*線の形状*/
+	width: 1px;
+	height: 0;
+	background: #333;
+	/*アニメーションの指定*/
+	transition: all 0.2s linear;
+}
+
+/*hoverした際、線が縦横100%伸びる*/
+.btn05:hover::before, .btn05:hover::after {
+	width: 100%;
+}
+
+.btn05:hover span::before, .btn05:hover span::after {
+	height: 100%;
+}
+
+/*== 左上と右下から枠線が伸びて塗りに */
+
+/*右下から右上へ伸びる横線*/
+.bordercircle3::after {
+	right: 0;
+	bottom: 0;
+	transition-duration: 0.4s;
+}
+
+/*右下から右上へ伸びる縦線*/
+.bordercircle3 span::after {
+	right: 0;
+	bottom: 0;
+	transition-duration: 0.4s;
+}
+
+/*左上から右上へ伸びる横線*/
+.bordercircle3::before {
+	left: 0;
+	top: 0;
+	transition-duration: 0.4s;
+}
+
+/*左上から左下へ伸びる横線*/
+.bordercircle3 span::before {
+	left: 0;
+	top: 0;
+	transition-duration: 0.4s;
+}
+
+/* ----------------------------------- */
+
+/*== 波紋がふわっと広がるボタン */
+.btnripple3 {
+	/*波紋の基点とするためrelativeを指定*/
+	position: relative;
+	/*リンクの形状*/
+	display: inline-block;
+	text-decoration: none;
+	color: #333;
+	outline: none;
+}
+
+
+/*矢印の設定*/
+.btnripple3::after {
+	content: '';
+	/*絶対配置で矢印の位置を決める*/
+	position: absolute;
+	top: 30%;
+	right: -20px;
+	/*矢印の形状*/
+	width: 5px;
+	height: 5px;
+	border-top: 1px solid #000;
+	border-right: 1px solid #000;
+	transform: rotate(45deg);
+}
+
+/*== 波紋がふわっと広がるボタン(改良版)矢印なし */
+.btnripple3-1 {
+	/*波紋の基点とするためrelativeを指定*/
+	position: relative;
+	/*リンクの形状*/
+	display: inline-block;
+	text-decoration: none;
+	color: #333;
+	outline: none;
+}
+
+/* ----------------------------------- */
+.btn01 {
+	background: salmon; /* 背景色 */
+	color: #fff; /* 文字色 */
+	padding: 16px 40px; /* 上下の余白、左右の余白 */
+	margin: 16px 40px;
+	text-decoration: none; /* デフォルトで入るリンクの下線を消す */
+}
+
+.btn01:hover {
+	opacity: .7;
+}
